@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class ButtonClick : MonoBehaviour
+public class ResetDisplay : MonoBehaviour
 {
     
     public InputSignal inputsignal;
@@ -13,5 +13,14 @@ public class ButtonClick : MonoBehaviour
     {
         inputsignal.InputSignalText.text = "";
         outputsignal.OutputSignalText.text = "";
+    }
+
+    void Update()
+    {
+        if(Input.GetKey(KeyCode.Delete))
+        {
+            inputsignal.InputSignalText.text = "";
+            outputsignal.OutputSignalText.text = "";
+        }
     }
 }

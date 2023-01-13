@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 246199797}
   - component: {fileID: 246199796}
   - component: {fileID: 246199798}
+  - component: {fileID: 246199799}
   m_Layer: 5
   m_Name: InputSignal
   m_TagString: Untagged
@@ -629,6 +630,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputSignalText: {fileID: 246199796}
   tmpSignal: 
+--- !u!114 &246199799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246199794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485f7dff77504a949aec8fd47e45ecfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputsignal: {fileID: 246199798}
+  outputsignal: {fileID: 29911145}
 --- !u!1 &443302403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,36 +1149,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &868931459
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 868931460}
-  m_Layer: 0
-  m_Name: InputSignalDisplay
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &868931460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868931459}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1095432735
 GameObject:

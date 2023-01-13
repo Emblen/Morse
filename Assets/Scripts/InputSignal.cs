@@ -79,7 +79,13 @@ public class InputSignal : MonoBehaviour
         }
     }
 
-    public bool isPrintSpace(){
+    public bool isPrintSpace()
+    {
         return printSpace;
+    }
+
+    private void EndGame()
+    {
+        if(Input.GetKey(KeyCode.Escape)) Application.Quit();
     }
 }

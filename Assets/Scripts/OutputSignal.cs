@@ -33,10 +33,9 @@ public class OutputSignal : MonoBehaviour
     void ChangeEn()
     {
         getSignal = inputsignal.tmpSignal;
-        foreach(var sig in MtoEn)
-        {
-            if(sig.Value==getSignal) getChar = sig.Key;
-        }
+        if(!MtoEn.ContainsValue(getSignal)) getChar = "?";
+        else foreach(var sig in MtoEn) if(sig.Value==getSignal) getChar = sig.Key;
+
         OutputSignalText.text += getChar;
         OutputDone = true;
     }
