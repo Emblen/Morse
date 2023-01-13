@@ -17,10 +17,14 @@ public class InputSignal : MonoBehaviour
     private bool printDot = false;
     private bool printSpace = false;
 
+    public AudioClip SignalSound;
+    AudioSource adSource;
+
     
     void Start()
     {
         stage = 0;
+        adSource = GetComponent<AudioSource>();
     }
     
 
@@ -31,6 +35,7 @@ public class InputSignal : MonoBehaviour
             //キーが押されたときに一度だけ呼び出される
             if(Input.GetKey(KeyCode.Space))
             {   
+                adSource.Play();
                 if(printSpace) tmpSignal = "";
                 PressTime = 0;
                 printDash = false;
@@ -54,6 +59,7 @@ public class InputSignal : MonoBehaviour
             }
             else //キーが離されたとき
             {
+                adSource.Stop();
                 if(PressTime<dotTime && !printDot)
                 {
                     InputSignalText.text += ".";
