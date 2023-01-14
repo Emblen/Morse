@@ -10,10 +10,10 @@ public class InputElekey : MonoBehaviour
     private int stage; //inputsignalの出力のステージング
     private double PressTime;
     private double notPressTime;
-    private const double dotTime = 0.1f;
+    private const double dotTime = 0.075f;
     private const double dashTime = dotTime*3;
-    private double[] dotdashTime = {dotTime, dashTime};
-    private string[] dotdashText = {".", "-"};
+    public double[] dotdashTime = {dotTime, dashTime};
+    public string[] dotdashText = {".", "-"};
 
     private bool printSpace = false;
 
@@ -34,16 +34,20 @@ public class InputElekey : MonoBehaviour
             if(adSource.isPlaying)
             {
                 InputSignalText.text += dotdashText[dotdash];
+                tmpSignal += dotdashText[dotdash];
                 adSource.Stop();
             }
-            else if(!adSource.isPlaying && PressTime>=dotdashTime[dotdash]+dotTime) PressTime = 0;
+            else if(PressTime>=dotdashTime[dotdash]+dotTime) PressTime = 0;
+            else PressTime+=Time.deltaTime;
         }
     }
     
     void notPressKey()
     {
-        if(notPressTime>=0 && notPressTime<dotTime) notPressTime += Time.deltaTime;
-        else if(notPressTime>=dotTime && !printSpace)
+        if(adSource.isPlaying) adSource.Stop();
+        if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.B)) stage = 0;
+        if(notPressTime>=0 && notPressTime<dashTime) notPressTime += Time.deltaTime;
+        else if(notPressTime>=dashTime && !printSpace)
         {
             InputSignalText.text += " ";
             printSpace = true;
@@ -64,28 +68,31 @@ public class InputElekey : MonoBehaviour
     {
         if(stage==0) //どちらかのキーが押されたときに一度だけ呼び出される
         {   
-            if(Input.GetKey(KeyCode.B))
+            PressTime = 0;
+            notPressTime = 0;
+            if(printSpace)
             {
-                PressTime = 0;
-                stage = 1;
+                tmpSignal = "";
                 printSpace = false;
             }
-            else if(Input.GetKey(KeyCode.Space))
-            {
-                PressTime = 0;
-                stage = 2;
-                printSpace = false;
-            }
+            if(Input.GetKey(KeyCode.Space)) stage = 1;
+            else if(Input.GetKey(KeyCode.B)) stage = 2;
         }
+
         else if(stage==1) //dotステージ
         {
-            if(Input.GetKey(KeyCode.B)) PressKey(0);
+            if(Input.GetKey(KeyCode.Space)) PressKey(0);
             else notPressKey();
         }
         else if(stage==2) //dashステージ
         {
-            if(Input.GetKey(KeyCode.Space)) PressKey(1);
+            if(Input.GetKey(KeyCode.B)) PressKey(1);
             else notPressKey();
         }
     } 
+
+    public bool isPrintSpace()
+    {
+        return printSpace;
+    }
 }

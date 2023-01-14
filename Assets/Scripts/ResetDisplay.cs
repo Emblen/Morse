@@ -7,11 +7,13 @@ using UnityEngine;
 public class ResetDisplay : MonoBehaviour
 {
     
-    public InputSignal inputsignal;
+    // public InputSignal inputsignal;
+    public InputElekey elekey;
     public OutputSignal outputsignal;
     public void ResetClick()
     {
-        inputsignal.InputSignalText.text = "";
+        // inputsignal.InputSignalText.text = "";
+        elekey.InputSignalText.text = "";
         outputsignal.OutputSignalText.text = "";
     }
 
@@ -19,7 +21,8 @@ public class ResetDisplay : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Delete))
         {
-            inputsignal.InputSignalText.text = "";
+            // inputsignal.InputSignalText.text = "";
+            elekey.InputSignalText.text = "";
             outputsignal.OutputSignalText.text = "";
         }
     }

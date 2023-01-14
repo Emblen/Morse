@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61d1eb2033aa7a46b0c6f7b01f7d588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputsignal: {fileID: 246199798}
+  elekey: {fileID: 246199798}
   OutputSignalText: {fileID: 29911143}
 --- !u!1 &138356174
 GameObject:
@@ -505,9 +505,9 @@ GameObject:
   - component: {fileID: 246199795}
   - component: {fileID: 246199797}
   - component: {fileID: 246199796}
+  - component: {fileID: 246199800}
   - component: {fileID: 246199798}
   - component: {fileID: 246199799}
-  - component: {fileID: 246199800}
   m_Layer: 5
   m_Name: InputSignal
   m_TagString: Untagged
@@ -640,11 +640,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 246199794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cfdb61b2839c5b469f0b0338b0d6408, type: 3}
+  m_Script: {fileID: 11500000, guid: 45f4eda07b043494c8da7534f26a9f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InputSignalText: {fileID: 246199796}
   tmpSignal: 
+  dotdashTime:
+  - 0.05
+  - 0.30000000447034836
+  dotdashText:
+  - .
+  - '-'
   SignalSound: {fileID: 8300000, guid: eb2575967ae8ab0449a51e1efcec3aa8, type: 3}
 --- !u!114 &246199799
 MonoBehaviour:
@@ -658,7 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485f7dff77504a949aec8fd47e45ecfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputsignal: {fileID: 246199798}
+  elekey: {fileID: 246199798}
   outputsignal: {fileID: 29911145}
 --- !u!82 &246199800
 AudioSource:
@@ -1119,7 +1125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485f7dff77504a949aec8fd47e45ecfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputsignal: {fileID: 246199798}
+  elekey: {fileID: 246199798}
   outputsignal: {fileID: 29911145}
 --- !u!1 &536150880
 GameObject:
