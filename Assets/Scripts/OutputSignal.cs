@@ -19,7 +19,9 @@ public class OutputSignal : MonoBehaviour
         {"K","-.-"}, {"L",".-.."}, {"M","--"}, {"N","-."}, {"O","---"},
         {"P",".--."}, {"Q","--.-"}, {"R",".-."}, {"S","..."}, {"T","-"},
         {"U","..-"}, {"V","...-"}, {"W",".--"}, {"X","-..-"}, {"Z","--.."},
-        {".",".-.-.-"}, {",","--..--"}
+        {".",".-.-.-"}, {",","--..--"}, {":","---..."}, {"?","..--.."}, {"'",".----."}, {"-","-....-"}, {"(","-.--."},
+        {")","-.--.-"}, {"/","-..-."}, {"=","-...-"}, {"+",".-.-."}, {"@",".--.-."}, {"1",".----"}, {"2","..---"}, {"3","...--"},
+        {"4","....-"}, {"5","....."},{"6","-...."},{"7","--..."},{"8","---.."},{"9","----."}, {"0","-----"}
     };
     // private Dictionary<string, char> MtoJa = new Dictionary<string, char>()
     // {
@@ -33,7 +35,7 @@ public class OutputSignal : MonoBehaviour
     void ChangeEn()
     {
         getSignal = inputsignal.tmpSignal;
-        if(!MtoEn.ContainsValue(getSignal)) getChar = "?";
+        if(!MtoEn.ContainsValue(getSignal)) getChar = "x";
         else foreach(var sig in MtoEn) if(sig.Value==getSignal) getChar = sig.Key;
 
         OutputSignalText.text += getChar;

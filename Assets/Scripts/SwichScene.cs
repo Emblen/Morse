@@ -12,4 +12,9 @@ public class SwichScene : MonoBehaviour
     {
         SceneManager.LoadScene(NextScene, LoadSceneMode.Single);
     }
+
+    public void OverlapScene()
+    {
+        SceneManager.LoadScene(NextScene, LoadSceneMode.Additive);
+    }
 }
