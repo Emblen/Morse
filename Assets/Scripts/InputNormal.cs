@@ -4,7 +4,7 @@ using UnityEngine;
 
 using TMPro;
 
-public class InputSignal : MonoBehaviour
+public class InputNormal : MonoBehaviour
 {
     public TextMeshProUGUI InputSignalText;
     public string tmpSignal;
@@ -18,7 +18,7 @@ public class InputSignal : MonoBehaviour
     private bool printSpace = false;
 
     public AudioClip SignalSound;
-    AudioSource adSource;
+    public AudioSource adSource;
 
     
     void Start()
@@ -32,15 +32,19 @@ public class InputSignal : MonoBehaviour
     {
         if(stage==0)
         {
+            
+            if(printSpace) 
+            {
+                tmpSignal = "";
+                printSpace = false;
+            }
             //キーが押されたときに一度だけ呼び出される
             if(Input.GetKey(KeyCode.Space))
             {   
                 adSource.Play();
-                if(printSpace) tmpSignal = "";
                 PressTime = 0;
                 printDash = false;
                 printDot = false;
-                printSpace = false;
                 stage = 1;
             }
         }
@@ -79,6 +83,7 @@ public class InputSignal : MonoBehaviour
                 {
                     InputSignalText.text = InputSignalText.text + " ";
                     printSpace = true;
+                    stage = 0;
                 }
             }
             else stage = 0;

@@ -4,9 +4,10 @@ using UnityEngine;
 using TMPro;
 
 public class OutputSignal : MonoBehaviour
-{
-    // public InputSignal inputsignal;
-    public InputElekey elekey;
+{   
+    public GameObject signal;
+    public InputNormal inputnormal;
+    public InputElekey inputelekey;
     public TextMeshProUGUI OutputSignalText;
     private string getSignal;
     private string getChar;
@@ -36,9 +37,9 @@ public class OutputSignal : MonoBehaviour
 
     void ChangeEn()
     {
-        // getSignal = inputsignal.tmpSignal;
-        getSignal = elekey.tmpSignal;
-        if(!MtoEn.ContainsValue(getSignal)) getChar = "x";
+        getSignal = (signal.GetComponent<InputElekey>().enabled) ?inputelekey.tmpSignal : inputnormal.tmpSignal;
+        if(getSignal=="");
+        else if(!MtoEn.ContainsValue(getSignal)) getChar = "x";
         else foreach(var sig in MtoEn) if(sig.Value==getSignal) getChar = sig.Key;
 
         OutputSignalText.text += getChar;
@@ -51,8 +52,8 @@ public class OutputSignal : MonoBehaviour
     // }
     void Update()
     {   
-        // getPrintSpace = inputsignal.isPrintSpace();
-        getPrintSpace = elekey.isPrintSpace();
+        getPrintSpace = (signal.GetComponent<InputElekey>().enabled) ? inputelekey.isPrintSpace() : inputnormal.isPrintSpace();
+
         if(getPrintSpace && !OutputDone) ChangeEn();
         else if(!getPrintSpace) OutputDone = false; 
     }
