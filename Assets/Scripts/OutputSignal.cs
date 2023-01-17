@@ -22,7 +22,7 @@ public class OutputSignal : MonoBehaviour
         {"P",".--."}, {"Q","--.-"}, {"R",".-."}, {"S","..."}, {"T","-"},
         {"U","..-"}, {"V","...-"}, {"W",".--"}, {"X","-..-"}, {"Y","-.--"}, 
         {"Z","--.."},
-        {".",".-.-.-"}, {",","--..--"}, {":","---..."}, {"?","..--.."}, {"'",".----."}, {"-","-....-"}, {"(","-.--."}, {"!","-.-.--"},
+        {".",".-.-.-"}, {",","--..--"}, {":","---..."}, {"?","..--.."}, {"'",".----."}, {"-","-....-"}, {"(","-.--."}, {"!","-.-.--"}, {"$","...-..-"}, {"&",".-..."}, {";","-.-.-."}, {"_", "..--.-"},
         {")","-.--.-"}, {"/","-..-."}, {"=","-...-"}, {"+",".-.-."}, {"@",".--.-."}, {"1",".----"}, {"2","..---"}, {"3","...--"},
         {"4","....-"}, {"5","....."},{"6","-...."},{"7","--..."},{"8","---.."},{"9","----."}, {"0","-----"}
     };
@@ -38,7 +38,8 @@ public class OutputSignal : MonoBehaviour
     void ChangeEn()
     {
         getSignal = (signal.GetComponent<InputElekey>().enabled) ?inputelekey.tmpSignal : inputnormal.tmpSignal;
-        if(!MtoEn.ContainsValue(getSignal)) getChar = "x";
+        if(getSignal==".-..-.") getChar = '"'.ToString();
+        else if (!MtoEn.ContainsValue(getSignal)) getChar = "x";
         else foreach(var sig in MtoEn) if(sig.Value==getSignal) getChar = sig.Key;
 
         OutputSignalText.text += getChar;
