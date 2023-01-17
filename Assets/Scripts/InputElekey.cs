@@ -18,7 +18,7 @@ public class InputElekey : MonoBehaviour
     private bool printSpace = false;
 
     public AudioClip SignalSound;
-    AudioSource adSource;
+    public AudioSource adSource;
 
     void PressKey(int dotdash)
     { //dot->0, dash->1

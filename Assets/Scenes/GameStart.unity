@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -132}
+  m_AnchoredPosition: {x: 0, y: -120}
   m_SizeDelta: {x: 800, y: 108.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &107744567
@@ -182,15 +182,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Morse Code
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 00e3c3b4e7fdcbe40a07de8bedd746fd, type: 2}
+  m_sharedMaterial: {fileID: -3662620135176205309, guid: 00e3c3b4e7fdcbe40a07de8bedd746fd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288152320
-  m_fontColor: {r: 0, g: 0.010397497, b: 0.5943396, a: 1}
+    rgba: 4280549632
+  m_fontColor: {r: 0, g: 0.0027929384, b: 0.14150941, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -207,13 +207,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 110
+  m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -803,8 +803,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288152320
-  m_fontColor: {r: 0, g: 0.011764706, b: 0.59607846, a: 1}
+    rgba: 4284154368
+  m_fontColor: {r: 0, g: 0.009688972, b: 0.3584906, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
