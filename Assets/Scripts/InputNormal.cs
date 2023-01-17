@@ -11,7 +11,7 @@ public class InputNormal : MonoBehaviour
     private int stage; //inputsignalの出力のステージング
     private double PressTime;
     private double notPressTime;
-    public const double dotTime = 0.2f;
+    public double dotTime;
     // private const double dashTime = dotTime*3;
     private bool printDash = false;
     private bool printDot = false;

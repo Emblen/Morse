@@ -11,19 +11,17 @@ public class SliderMotion : MonoBehaviour
     public GameObject signal;
     
     private int freq, mode;
-    private double speed;
+    private double dotRate;
     private float pitch600;
     private string[] ModeText = {"Normal", "Paddle"};
     
     public Slider PitchSlider, ModeSlider, SpeedSlider;
-    public TextMeshProUGUI freqText, modeText;
+    public TextMeshProUGUI freqText, modeText, speedText;
 
     void PitchSliderSet()
     {
         PitchSlider = GetComponent<Slider>();
-        freq = (int)PitchSlider.value;
-        pitch600 = 1.0f;
-        freqText.text = "700Hz";
+        PitchSlider.value = 600f;
     }
     void ModeSliderSet()
     {
@@ -42,7 +40,7 @@ public class SliderMotion : MonoBehaviour
     {
         PitchSliderSet();
         ModeSliderSet();
-
+        SpeedSliderSet();
     }
 
     public void ModeChanged() 
@@ -72,18 +70,17 @@ public class SliderMotion : MonoBehaviour
 
     public void SpeedChanged()
     {
+        dotRate = SpeedSlider.value;
+        inputnormal.dotTime = 0.2/dotRate;
+        inputelekey.dotTime = 0.1/dotRate;
+        inputelekey.dashTime = inputelekey.dotTime*3;
 
+        speedText.text = "x" + dotRate.ToString("0.00");
     }
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.P))
-        {
-            ModeSlider.value = 1;
-        }
-        else if(Input.GetKey(KeyCode.N))
-        {
-            ModeSlider.value = 0;
-        }
+        if(Input.GetKey(KeyCode.P)) ModeSlider.value = 1;
+        else if(Input.GetKey(KeyCode.N)) ModeSlider.value = 0;
     }
 }

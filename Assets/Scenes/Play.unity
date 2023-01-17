@@ -873,9 +873,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputSignalText: {fileID: 246199796}
   tmpSignal: 
-  dotdashTime:
-  - 0.05
-  - 0.30000000447034836
+  dotTime: 0
+  dashTime: 0
   dotdashText:
   - .
   - '-'
@@ -1005,6 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputSignalText: {fileID: 246199796}
   tmpSignal: 
+  dotTime: 0
   SignalSound: {fileID: 8300000, guid: eb2575967ae8ab0449a51e1efcec3aa8, type: 3}
   adSource: {fileID: 0}
 --- !u!1 &321471624
@@ -1151,6 +1151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433330885}
   - component: {fileID: 433330886}
+  - component: {fileID: 433330887}
   m_Layer: 5
   m_Name: Slider2
   m_TagString: Untagged
@@ -1224,13 +1225,46 @@ MonoBehaviour:
   m_FillRect: {fileID: 835608805}
   m_HandleRect: {fileID: 243659262}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 0.5
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 433330887}
+        m_TargetAssemblyTypeName: SliderMotion, Assembly-CSharp
+        m_MethodName: SpeedChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &433330887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433330884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab422837c1e8fd9438b79200d36c9549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputnormal: {fileID: 246199801}
+  inputelekey: {fileID: 246199798}
+  signal: {fileID: 246199794}
+  PitchSlider: {fileID: 1514430957}
+  ModeSlider: {fileID: 960333946}
+  SpeedSlider: {fileID: 433330886}
+  freqText: {fileID: 1163207025}
+  modeText: {fileID: 886297007}
+  speedText: {fileID: 1042957689}
 --- !u!1 &443302403
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2289,7 @@ MonoBehaviour:
   SpeedSlider: {fileID: 433330886}
   freqText: {fileID: 1163207025}
   modeText: {fileID: 886297007}
+  speedText: {fileID: 1042957689}
 --- !u!1 &1018772493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,6 +3168,7 @@ MonoBehaviour:
   SpeedSlider: {fileID: 433330886}
   freqText: {fileID: 1163207025}
   modeText: {fileID: 886297007}
+  speedText: {fileID: 1042957689}
 --- !u!1 &1559893668
 GameObject:
   m_ObjectHideFlags: 0

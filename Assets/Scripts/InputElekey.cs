@@ -10,9 +10,8 @@ public class InputElekey : MonoBehaviour
     private int stage; //inputsignalの出力のステージング
     private double PressTime;
     private double notPressTime;
-    public const double dotTime = 0.075f;
-    private const double dashTime = dotTime*3;
-    public double[] dotdashTime = {dotTime, dashTime};
+    public double dotTime;
+    public double dashTime;
     public string[] dotdashText = {".", "-"};
 
     private bool printSpace = false;
@@ -22,6 +21,7 @@ public class InputElekey : MonoBehaviour
 
     void PressKey(int dotdash)
     { //dot->0, dash->1
+        double[] dotdashTime = {dotTime, dashTime};
         if(PressTime==0)
         {
             adSource.Play();
