@@ -11,7 +11,8 @@ public class SliderMotion : MonoBehaviour
     public GameObject signal;
     
     private int freq, mode;
-    private double speed, pitch600;
+    private double speed;
+    private float pitch600;
     private string[] ModeText = {"Normal", "Paddle"};
     
     public Slider PitchSlider, ModeSlider, SpeedSlider;
@@ -20,10 +21,9 @@ public class SliderMotion : MonoBehaviour
     void PitchSliderSet()
     {
         PitchSlider = GetComponent<Slider>();
-        PitchSlider.value = 600;
         freq = (int)PitchSlider.value;
-        pitch600 = 1.0;
-        freqText.text = "600Hz";
+        pitch600 = 1.0f;
+        freqText.text = "700Hz";
     }
     void ModeSliderSet()
     {
@@ -45,12 +45,6 @@ public class SliderMotion : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ModeChanged() 
     {
         mode = (int)(ModeSlider.value+0.5);
@@ -68,12 +62,28 @@ public class SliderMotion : MonoBehaviour
         }
     }
 
-    // public void PitchChanged()
-    // {
-    //     freq = (int)PitchSlider.value;
-    //     pitch600 = (double)freq/600;
-    //     if(signal.GetComponent<InputElekey>().enabled) inputelekey.adSource.pitch = (float)pitch600;
-    //     else inputnormal.adSource.pitch = (float)pitch600;
-    //     freqText.text = ((int)freq).ToString() +"Hz";
-    // }
+    public void PitchChanged()
+    {
+        freq = (int)PitchSlider.value;
+        pitch600 = (float)freq/600;
+        signal.GetComponent<AudioSource>().pitch = pitch600;
+        freqText.text = freq.ToString() +"Hz";
+    }
+
+    public void SpeedChanged()
+    {
+
+    }
+
+    void Update()
+    {
+        if(Input.GetKey(KeyCode.P))
+        {
+            ModeSlider.value = 1;
+        }
+        else if(Input.GetKey(KeyCode.N))
+        {
+            ModeSlider.value = 0;
+        }
+    }
 }

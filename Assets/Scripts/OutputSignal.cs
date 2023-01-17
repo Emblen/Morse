@@ -38,8 +38,7 @@ public class OutputSignal : MonoBehaviour
     void ChangeEn()
     {
         getSignal = (signal.GetComponent<InputElekey>().enabled) ?inputelekey.tmpSignal : inputnormal.tmpSignal;
-        if(getSignal=="");
-        else if(!MtoEn.ContainsValue(getSignal)) getChar = "x";
+        if(!MtoEn.ContainsValue(getSignal)) getChar = "x";
         else foreach(var sig in MtoEn) if(sig.Value==getSignal) getChar = sig.Key;
 
         OutputSignalText.text += getChar;

@@ -10,7 +10,7 @@ public class InputElekey : MonoBehaviour
     private int stage; //inputsignalの出力のステージング
     private double PressTime;
     private double notPressTime;
-    private const double dotTime = 0.075f;
+    public const double dotTime = 0.075f;
     private const double dashTime = dotTime*3;
     public double[] dotdashTime = {dotTime, dashTime};
     public string[] dotdashText = {".", "-"};
