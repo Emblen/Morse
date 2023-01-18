@@ -13,6 +13,8 @@ public class OutputSignal : MonoBehaviour
     private string getChar;
     private bool OutputDone;
     private bool getPrintSpace;
+    private string nowInputText;
+    private int nowInputTextNum;
 
     private Dictionary<string, string> MtoEn = new Dictionary<string, string>()
     {
@@ -37,9 +39,14 @@ public class OutputSignal : MonoBehaviour
 
     void ChangeEn()
     {
-        getSignal = (signal.GetComponent<InputElekey>().enabled) ?inputelekey.tmpSignal : inputnormal.tmpSignal;
+        getSignal = (signal.GetComponent<InputElekey>().enabled) ? inputelekey.tmpSignal : inputnormal.tmpSignal;
         if(getSignal==".-..-.") getChar = '"'.ToString();
-        else if (!MtoEn.ContainsValue(getSignal)) getChar = "x";
+        else if (!MtoEn.ContainsValue(getSignal))
+        {
+            getChar = "<color=red>x</color>";
+            nowInputTextNum = inputnormal.getInputTextLength();
+            inputnormal.InputSignalText.text = inputnormal.InputSignalText.text.Substring(0, nowInputTextNum-getSignal.Length-1) + "<color=red>" + getSignal + "</color> ";
+        }
         else foreach(var sig in MtoEn) if(sig.Value==getSignal) getChar = sig.Key;
 
         OutputSignalText.text += getChar;

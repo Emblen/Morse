@@ -94,6 +94,10 @@ public class InputNormal : MonoBehaviour
     {
         return printSpace;
     }
+    public int getInputTextLength()
+    {
+        return InputSignalText.text.Length;
+    }
 
     private void EndGame()
     {
