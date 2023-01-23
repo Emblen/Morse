@@ -82,12 +82,28 @@ public class InputElekey : MonoBehaviour
         else if(stage==1) //dotステージ
         {
             if(Input.GetKey(KeyCode.Space)) PressKey(0);
-            else notPressKey();
+            else
+            {
+                if(tmpSignal.Length==0)
+                {
+                    InputSignalText.text += ".";
+                    tmpSignal=".";
+                }
+                notPressKey();
+            }
         }
         else if(stage==2) //dashステージ
         {
             if(Input.GetKey(KeyCode.B)) PressKey(1);
-            else notPressKey();
+            else 
+            {
+                if(tmpSignal.Length==0)
+                {
+                    InputSignalText.text += "-";
+                    tmpSignal="-";
+                }
+                notPressKey();
+            }
         }
     } 
 
