@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 185.02, y: 50.919}
-  m_SizeDelta: {x: 350.04, y: 338.16}
+  m_AnchoredPosition: {x: 185.02, y: 50}
+  m_SizeDelta: {x: 350.04, y: 343.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &29911143
 MonoBehaviour:
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -383,8 +383,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -187, y: -24.5}
-  m_SizeDelta: {x: -446, y: -111}
+  m_AnchoredPosition: {x: -187, y: -29.219997}
+  m_SizeDelta: {x: -446, y: -101.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &138356176
 MonoBehaviour:
@@ -759,8 +759,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -187, y: -24.499996}
-  m_SizeDelta: {x: 354, y: 489}
+  m_AnchoredPosition: {x: -187, y: -30}
+  m_SizeDelta: {x: 354, y: 496.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &246199796
 MonoBehaviour:
@@ -784,8 +784,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ad5cffa2af23fea4ea166b98cc39094f, type: 2}
-  m_sharedMaterial: {fileID: -4070249957795500243, guid: ad5cffa2af23fea4ea166b98cc39094f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -827,7 +827,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -1664,8 +1664,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 185.02003, y: 50.919006}
-  m_SizeDelta: {x: -449.96, y: -261.84}
+  m_AnchoredPosition: {x: 185.02003, y: 49.146976}
+  m_SizeDelta: {x: -449.96, y: -258.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536150882
 MonoBehaviour:
